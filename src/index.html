@@ -68,21 +68,13 @@
                 <label for="exampleFormControlInput1" class="form-label"
                   >First name</label
                 >
-                <input
-                  type="text"
-                  class="form-control "
-                  id="exampleFormControlInput1"
-                />
+                <input type="text" class="form-control " id="firstname" />
               </div>
               <div class="col-6 mb-3">
                 <label for="exampleFormControlInput1" class="form-label"
                   >Last name</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                />
+                <input type="text" class="form-control" id="lastname" />
               </div>
             </div>
             <div class="row justify-content-around">
@@ -90,22 +82,22 @@
                 <label for="exampleFormControlInput1" class="form-label"
                   >City</label
                 >
-                <input
-                  type="text"
-                  class="form-control "
-                  id="exampleFormControlInput1"
-                />
+                <input type="text" class="form-control " id="city" />
               </div>
               <div class="col-3 mb-3 ">
                 <label for="exampleFormControlInput1" class="form-label"
                   >State</label
                 >
-                <input
-                  type="text"
+                <select
+                  class="custom-select custom-select-lg mb-3 w-100 h-50 form-control text-secondary
                   class="form-control "
-                  id="exampleFormControlInput1"
-                  placeholder="Pick a state"
-                />
+                  id="state"
+                >
+                  <option selected>Pick a state</option>
+                  <option value="1">Iquique</option>
+                  <option value="2">Santiago</option>
+                  <option value="3">Puerto Montt</option>
+                </select>
               </div>
               <div class="col-3 mb-3">
                 <label for="exampleFormControlInput1" class="form-label"
@@ -114,7 +106,7 @@
                 <input
                   type="number"
                   class="form-control"
-                  id="exampleFormControlInput1"
+                  id="postalCode"
                 />
               </div>
             </div>
@@ -123,12 +115,12 @@
                 <label for="exampleFormControlInput1" class="form-label"
                   >We accept:</label
                 >
-                <div class="bg-secondary rounded w-50 text-center">
+                <div class="bg-secondary rounded w-50 text-center" id="medioDePago">
                   <div class="form-check form-check-inline ">
                     <input
                       class="form-check-input"
                       type="radio"
-                      id="inlineCheckbox1"
+                      
                       value="option1"
                     />
                     <label class="form-check-label" for="inlineCheckbox1"
@@ -176,7 +168,7 @@
                 >
                 <textarea
                   class="form-control"
-                  id="exampleFormControlTextarea1"
+                  id="message"
                   rows="3"
                 ></textarea>
                 <p class="text-secondary ">Add any notes here.</p>

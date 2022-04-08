@@ -18,9 +18,20 @@ window.onload = function() {
 
     let form = e.target;
 
-    let { card, cvc } = form;
+    let {
+      card,
+      cvc,
+      amount,
+      firstname,
+      lastname,
+      city,
+      state,
+      postalCode,
+      medioDePago,
+      message
+    } = form;
 
-    let onlyText = /^[a-zA-Z0-9]+$/;
+    let onlyText = /^[a-zA-Z\s]+$/;
     let onlyNumbers = /^[0-9]+$/;
     let onlyNumbersLength = /^[0-9]{16}$/;
     let onlyNumbersLengthToCVC = /^[0-9]{3,4}$/;
@@ -49,7 +60,7 @@ window.onload = function() {
       errors = true;
     } else if (!onlyNumbersLengthToCVC.test(cvc.value)) {
       alert.style.display = "block";
-      alert.innerHTML = "Debe contener mínimo 3 dígitos";
+      alert.innerHTML = "Debe contener 3 a 4 dígitos";
       cvc.style.background = "#F5B7B1";
       errors = true;
     } else
@@ -66,6 +77,90 @@ window.onload = function() {
       (amount.style.background = "none"),
         (errors = false),
         (alert.style.display = "none");
-    //El siguiente código nos valida el campo de Amount
+    //El siguiente código nos valida el campo de Firstname
+    if (firstname.value === "") {
+      alert.style.display = "block";
+      alert.innerHTML = "El campo es obligatorio";
+      firstname.style.background = "#F5B7B1";
+      errors = true;
+    } else if (!onlyText.test(firstname.value)) {
+      alert.style.display = "block";
+      alert.innerHTML = "Debe contener un nombre";
+      firstname.style.background = "#F5B7B1";
+      errors = true;
+    } else
+      (firstname.style.background = "none"),
+        (errors = false),
+        (alert.style.display = "none");
+    //El siguiente código nos valida el campo de Lastname
+    if (lastname.value === "") {
+      alert.style.display = "block";
+      alert.innerHTML = "El campo es obligatorio";
+      lastname.style.background = "#F5B7B1";
+      errors = true;
+    } else if (!onlyText.test(lastname.value)) {
+      alert.style.display = "block";
+      alert.innerHTML = "Debe contener un apellido";
+      lastname.style.background = "#F5B7B1";
+      errors = true;
+    } else
+      (lastname.style.background = "none"),
+        (errors = false),
+        (alert.style.display = "none");
+    //El siguiente código nos valida el campo de City
+    if (city.value === "") {
+      alert.style.display = "block";
+      alert.innerHTML = "El campo es obligatorio";
+      city.style.background = "#F5B7B1";
+      errors = true;
+    } else if (!onlyText.test(city.value)) {
+      alert.style.display = "block";
+      alert.innerHTML = "Debe contener una ciudad";
+      city.style.background = "#F5B7B1";
+      errors = true;
+    } else
+      (city.style.background = "none"),
+        (errors = false),
+        (alert.style.display = "none");
+    //El siguiente código nos valida el campo de State
+    if (state.value === "") {
+      alert.style.display = "block";
+      alert.innerHTML = "El campo es obligatorio";
+      state.style.background = "#F5B7B1";
+      errors = true;
+    } else
+      (state.style.background = "none"),
+        (errors = false),
+        (alert.style.display = "none");
+    //El siguiente código nos valida el campo de Postal Code
+    if (postalCode.value === "") {
+      alert.style.display = "block";
+      alert.innerHTML = "El campo es obligatorio";
+      postalCode.style.background = "#F5B7B1";
+      errors = true;
+    } else
+      (postalCode.style.background = "none"),
+        (errors = false),
+        (alert.style.display = "none");
+    //El siguiente código nos valida el campo de medios de pago
+    if (medioDePago.value === "") {
+      alert.style.display = "block";
+      alert.innerHTML = "El campo es obligatorio";
+      medioDePago.style.background = "#F5B7B1";
+      errors = true;
+    } else
+      (medioDePago.style.background = "none"),
+        (errors = false),
+        (alert.style.display = "none");
+    //El siguiente código nos valida el campo de Message
+    if (message.value === "") {
+      alert.style.display = "block";
+      alert.innerHTML = "El campo es obligatorio";
+      message.style.background = "#F5B7B1";
+      errors = true;
+    } else
+      (message.style.background = "none"),
+        (errors = false),
+        (alert.style.display = "none");
   });
 };
